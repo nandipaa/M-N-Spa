@@ -1,0 +1,501 @@
+.navbar{
+background-color:#acd8d9;
+}
+
+.navbar-nav{
+
+text-decoration: none;
+    color: #000000;
+    font-family: 'Archivo', sans-serif;
+    text-transform: uppercase;
+
+}
+
+.navbar-brand{
+    text-decoration: none;
+    color: #acd8d9;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    margin-left:40px;
+
+}
+
+
+.hello-msg{
+ font-size: 18px;
+ color:#000;
+ margin-right:5px;
+}
+
+/* index boxes */
+.gallery.box{
+  width: 300px;
+  height:405px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1%;
+}
+
+.gallery .card{
+	position: relative;
+}
+
+.image{
+  height: 405px;
+  width: 100%;
+}
+
+.gallery .column{
+  width: 20%;
+  float: left;
+}
+
+.gallery .column.col1{
+  background-color: #325C7D;
+}
+
+.gallery .column.col2{
+  background-color: #6C5B7B;
+}
+
+.gallery .column.col3{
+  background-color: #C26D85;
+}
+
+.gallery .column.col4{
+  background-color: #EB7180;
+}
+.gallery .column.col5{
+  background-color: #F5B195;
+}
+
+.gallery .overlay{
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	opacity: 0;
+  background-color: #000;
+	-webkit-transition: opacity 0.35s;
+	-o-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+.gallery .info,
+.gallery .foot{
+	-webkit-transition: bottom 0.35s;
+	-o-transition: bottom 0.35s;
+	transition: bottom 0.35s;
+}
+
+.gallery .info{
+	position: absolute;
+	bottom: -20px;
+	width: 100%;
+}
+
+.gallery .info h2 a{
+  color: #fff;
+  display: block;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  text-decoration:none;
+}
+
+.gallery .info h2{
+	line-height: 24px;
+	font-size: 18px;
+  padding: 0 10px;
+  font-weight: 400;
+}
+
+.gallery .foot{
+	height: 35px;
+	bottom: -35px;
+	position: relative;
+	color: #fff;
+  padding: 0 10px;
+
+}
+
+.gallery .foot .social{
+	float: right;
+	color: #fff;
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+.gallery .foot .line{
+	height: 2px;
+	display: block;
+	margin: 10px 0;
+  background-color: #fff;
+  margin-top: 20px;
+  width: 0%;
+  transition: width 0.6s;
+}
+
+.gallery .date{
+  font-weight: 300;
+}
+
+.gallery .fa-camera-retro{
+  top: 0;
+  left: 0;
+  padding: 10px 10px;
+  position: absolute;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1;
+  transition: font-size 0.35s;
+}
+
+/*  hovers  */
+.gallery:hover .info,
+.gallery:hover .foot{
+	bottom:10px;
+}
+
+.gallery:hover .overlay{
+	opacity: 0.5;
+}
+
+.gallery:hover .foot .line{
+  width: 100%;
+}
+
+.gallery:hover .fa-camera-retro{
+  font-size:32px;
+}
+
+/* end index boxes */
+
+
+
+
+
+/* packages */
+
+.cd {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.cd .card {
+    position: relative;
+    border-radius: 10px;
+    background-color: #acd8d9;
+    margin-top:150px
+
+
+
+}
+
+.cd .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.7s;
+    z-index: 1;
+}
+
+.cd .card:nth-child(1) .icon {
+    background: url("/static/img/hot-stone.jpg");
+    background-repeat: no-repeat;
+    background-size: contain
+
+}
+
+.cd .card:nth-child(2) .icon {
+   background: url("/static/img/flowers.jpg");
+   background-repeat: no-repeat;
+   background-size: contain
+}
+
+.cd .card:nth-child(3) .icon {
+   background: url("/static/img/mask.jpg");
+   background-repeat: no-repeat;
+   background-size: contain
+}
+
+.cd .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.cd .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.cd .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0px);
+}
+
+.cd .card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.cd .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.cd .card .face.face1 .content i{
+    max-width: 100px;
+}
+
+.cd .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.cd .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.cd .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.cd .card .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+}
+
+.cd a {
+    text-decoration: none;
+    color: #414141;
+}
+
+.na{
+background-color:#e07768
+}
+
+.ba{
+background-color:#6eadd4;
+}
+
+.la{
+background-color: #4aada9;
+}
+
+/* end packages */
+
+/* booking form */
+.booking-form {
+	background-color: #fff;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding: 20px 20px;
+	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+}
+
+.booking-form .form-group-text {
+	position: relative;
+	margin-bottom: 30px;
+
+
+
+}
+
+.booking-form .form-control {
+	background-color: #ebecee;
+	border-radius: 4px;
+	border: none;
+	height: 40px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-size: 14px;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control::placeholder {
+	color: rgba(62, 72, 92, 0.3);
+}
+
+
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: rgba(62, 72, 92, 0.3);
+	font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	display: inline-block;
+	color: #3e485c;
+	font-weight: 700;
+	margin-bottom: 6px;
+	margin-left: 7px;
+}
+
+
+.booking-cta {
+	margin-top: 80px;
+	margin-bottom: 30px;
+	color:#000000;
+}
+
+.booking-cta h1 {
+	font-size: 52px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+}
+
+.booking-cta p {
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* end booking form */
+
+
+.testimonial {
+background-color:#acd8d9;
+  float: left;
+  width: 100%;
+  color: #52565b;
+}
+.testimonial .section-title h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+#testimonial blockquote {
+  border-left: none;
+  padding: 20px;
+  background: #fff;
+  -webkit-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+#testimonial blockquote:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 12px 12px 0 12px;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -12px;
+  left: 10%;
+}
+#testimonial .author {
+  margin-bottom: 0;
+  margin-left: 10px;
+  color: #fff;
+}
+
+
+.testimonial{
+  padding: 7em 0;
+  margin-bottom:50px;
+}
+
+
+
+.welcome{
+ border-style:solid;
+ border-color:#acd8d9;
+ margin-right:200px;
+ margin-left:200px;
+ margin-bottom:10px;
+ border-radius:20px;
+ border-width: 50vw 50vw 0
+ font-family: 'Abril Fatface', cursive;
+}
+
+.intro{
+font-family: 'Padauk', sans-serif;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 33vh;
+ }
+
+.mix{
+font-size:18px;
+border-style:solid;
+border-color: #acd8d9;
+
+}
+
+.come{
+ font-family: 'Abril Fatface', cursive;
+}
+
+.footer{
+background:#acd8d9;
+padding:100px;
+}
+
+.log{
+color:#000000;
+}
+

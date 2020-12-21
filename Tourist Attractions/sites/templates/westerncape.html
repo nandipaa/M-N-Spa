@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+
+{% block westerncape %}
+<body>
+
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+         <div class="container">
+
+        <div class="jumbotron-fluid">
+            {% load static %}<img src="{% static 'img/Western Cape.png'%}" width="100%"/>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+
+        <div class="container">
+
+
+
+            <!--Section: Images-->
+            <section class="text-center">
+
+                <div class="row">
+
+                    <div class="hov col-lg-4 col-md-12 mb-3"  data-toggle="modal" data-target="#m21">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.planetware.com/photos-large/SAF/south-africa-western-cape-table-mountain.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Table Mountain</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="hov col-lg-4 col-md-6 mb-3"  data-toggle="modal" data-target="#m22">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.planetware.com/photos-large/SAF/south-africa-western-cape-cape-point.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Cape Point</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="hov col-lg-4 col-md-6 mb-3"  data-toggle="modal" data-target="#m23">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.planetware.com/photos-large/SAF/south-africa-western-cape-hermanus-whale.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Hermnaus: Whale watching </h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <div class="hov col-md-6 mb-3"  data-toggle="modal" data-target="#m24">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.planetware.com/photos-large/SAF/south-africa-western-cape-cape-agulhas.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Cape Agulhas</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="hov col-md-6 mb-3"  data-toggle="modal" data-target="#m25">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.planetware.com/photos-large/SAF/south-africa-western-cape-knysna-heads.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Knysna Heads, The Garden Route</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+            <!--Section: Images-->
+
+            <div id="m21" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg"  role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Table Mountain</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbQTmV-ZnzB0RYkP6_MCaVK8&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                            <p>Composed of thick beds of sandstone and slate, the mountain is the crown jewel of Table
+                                Mountain National Park, which protects an incredible diversity of plants and animals.
+                                The best time to summit Table Mountain is when the peak is clear from the layer of
+                                clouds, called the "tablecloth," which frequently forms a fluffy duvet over the
+                                mountain's peak. Choose the right timing, and lucky visitors can soak up spectacular
+                                views of Cape Town and the entire Cape Peninsula from the top.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="m22" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Cape Point</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=cape%20point&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                            <p>Cape Point, about 60 kilometers from Cape Town, is one of the most popular day trips from
+                                the city. Not only is this the southwestern-most point of the African continent, it's
+                                also part of the Cape Floral Region, a UNESCO World Heritage Site with one of the
+                                richest areas of flora on the planet. The birdlife is also prolific with more than 250
+                                species.
+
+                                The view from the Cape Point Lighthouse is spectacular-visitors can climb up the stairs,
+                                or better still, take the Flying Dutchman funicular to the top. Other highlights here
+                                include exploring the nature trails, whale watching, and wildlife spotting-look for Cape
+                                zebra and eland, and watch out for the troops of cheeky baboons.
+
+                                Traveling to this far-flung strip of land can be just as scenic as the site itself. The
+                                drive along the Cape Peninsula passes through pretty beach towns and prime penguin
+                                viewing on the beautiful beaches at Boulders Bay. On the return trip, travelers can wind
+                                along sheer sea cliffs on Chapman's Peak Drive and soak up amazing sunset views along
+                                the way.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="m23" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Hermanus: Whale Watching</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJlczXU-cLzh0R7_EAwTubW4A&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                            <p>About 120 kilometers east of Cape Town, Hermanus is a popular holiday resort and one of
+                                the best places in the world to see whales close to shore. From July through November,
+                                large numbers of southern right whales swim along the coast here, and the town
+                                celebrates these gentle giants each September at the annual Whale Festival.
+
+                                Besides this amazing wildlife spectacle, the top tourist attractions here are the
+                                beautiful sandy beaches to the east of town and the excellent water sports facilities.
+                                Thanks to some record catches, the coastal waters attract large numbers of anglers. The
+                                heart of town around the harbor is quite small and easy to explore on foot with restored
+                                fishermen's houses now occupied by restaurants and shops.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="m24" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Cape Agulhas</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ6SEYvZ220R0RwalsH9Efl1A&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                            <p>About 220 kilometers from Cape Town, Cape Agulhas is the southernmost point of the
+                                Republic of South Africa as well as the African continent itself. Here, the Atlantic and
+                                Indian Oceans meet, a fact that is announced rather unassumingly on a small cobalt blue
+                                sign. Although not as scenic as the dramatic coastline at Cape Point (South Africa's
+                                most southwesterly point), this is a place for travelers to tick off their bucket list.
+                                It is also a good place to stop and breathe in the crisp sea air on the gently sloping
+                                rocky beaches, and snap a photo next to the sign.
+
+                                Cape Agulhas means "Cape of Needles," possibly alluding to the fact that compass needles
+                                of the early Portuguese navigators pointed due north here; others think that the name
+                                refers to the sharp reefs off the coast. The lighthouse, now a museum, was built in 1848
+                                and is the second oldest in South Africa. A radio beacon warns ships rounding the Cape,
+                                although visitors will see the rusted hulls of vessels that succumbed to frequent rogue
+                                waves. The sea in this area is one of the world's most productive fishing grounds.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div  id="m25" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg"  role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Knysna Heads, The Garden Route</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Knysna%20Heads%2C%20The%20Garden%20Route&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                            <p>The magnificent Knysna Heads are one of the most popular attractions along the Garden
+                                Route, the scenic 200-plus-kilometer drive from Mossel Bay, in the Western Cape, to the
+                                Storms River, in the Eastern Cape. These two massive crags loom above a sparkling lagoon
+                                and provide plenty of panoramic viewpoints overlooking the thrashing surf below and the
+                                rugged and rocky coast.
+
+                                Hiking trails thread throughout the heads, and sightseeing boats offer a dramatic
+                                vantage point from the sea. Visitors can also linger at one of the cafés in the area and
+                                dine with a view. Knysna is also famous for its oysters, which the town celebrates at
+                                its annual oyster festival held in late June or early July. In the forests around
+                                Knysna, hikers can look for wildlife among centuries-old yellowwood trees and beautiful
+                                pink-flowered Cape chestnuts where elephants once roamed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+</body>
+{% endblock westerncape %}

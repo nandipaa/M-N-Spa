@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
+
+    <title>Spa</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light container-fluid">
+    <a href="/hotel/" class="navbar-brand">M & N Spa</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+           {% if request.user.is_authenticated %}
+            <a href="/resort/" class="nav-item nav-link active">home</a>
+            <a href="/resort/packages" class="nav-item nav-link">Packages</a>
+            <a href="/resort/booking" class="nav-item nav-link">Book Now</a>
+            <a href="/resort/user_page" class="nav-item nav-link">My PAge</a>
+            {% if request.user.is_staff %}
+            <a href="/resort/dashboard" class="nav-item nav-link">Dashboard</a>
+            {% endif %}
+            {% else %}
+            <a href="/resort/" class="nav-item nav-link active">home</a>
+            <a href="/resort/packages" class="nav-item nav-link">Packages</a>
+            <a href="/resort/booking" class="nav-item nav-link">Book Now</a>
+            <a href="/resort/loginPage" class="nav-item nav-link">login</a>
+            {% endif %}
+
+
+        </div>
+
+    </div>
+     {% if request.user.is_authenticated %}
+    <span class="hello-msg">Hello, {{ request.user }} </span>
+    <span><a class="log" href="{% url 'logout' %}">Logout</a></span>
+    {% endif %}
+</nav>
+
+
+<div>
+    {% block main %}
+    {% endblock main %}
+
+    {% block login %}
+    {% endblock login %}
+
+    {% block register %}
+    {% endblock register %}
+
+    {% block book %}
+    {% endblock book %}
+
+    {% block packages %}
+    {% endblock packages %}
+
+    {% block dash %}
+    {% endblock dash %}
+
+    {% block user %}
+    {% endblock user %}
+
+    {% block verify %}
+    {% endblock verify %}
+
+
+</div>
+<footer class="sticky footer pt-4 my-md-5 pt-md-5 ">
+    <div class="container row">
+      <div class="col-12 col-md">
+          <p class="text-center"><i class="fas fa-map-marker-alt"></i> South Africa Copyright &copy; 2020 Munashe Operations. All Rights Reserved</p>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Contacts</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Packages</a></li>
+          <li><a class="text-muted" href="#">Book</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Terms</a></li>
+          <li><a class="text-muted" href="#">Conditions</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+

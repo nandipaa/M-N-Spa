@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+
+{% block freestate %}
+<body>
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+
+         <div class="container">
+
+        <div class="jumbotron-fluid">
+            {% load static %}<img src="{% static 'img/Free State.png'%}" width="100%"/>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+        <div class="container">
+
+
+
+            <!--Images-->
+            <section class="text-center">
+
+
+                <div class="row">
+
+
+                    <div class="hov col-lg-4 col-md-12 mb-3" data-toggle="modal" data-target="#m46">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.portfoliocollection.com/img/cache/img/uploads/attractions682x512_192680498_the-national-museum-bloemfontein_26.jpg?v1456316713" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">National Museum</h5>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hov col-lg-4 col-md-6 mb-3" data-toggle="modal" data-target="#m47">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.roomsforafrica.com/images/freestate_bloemfontein_bagamoya_wildlife_estate2.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Bagamoya Wildlife Estate</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="hov col-lg-4 col-md-6 mb-3" data-toggle="modal" data-target="#m48">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.roomsforafrica.com/images/freestate_bloemfontein_liesel_wessels_art_gallery2.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Liesel Wessels Art Gallery</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <div class="hov col-md-6 mb-3" data-toggle="modal" data-target="#m49">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.roomsforafrica.com/images/freestate_bloemfontein_orchid_house_choo_yut_shing.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Orchid House</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="hov col-md-6 mb-3" data-toggle="modal" data-target="#m50">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.roomsforafrica.com/images/bloemfontein_free_state_nat_bot_gardens.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Free State National Botanical Gardens</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+            <!--Images-->
+
+
+            <div id="m46" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">National Museum</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJFVlNTF3Fjx4R5we5uTcZ5oo&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                                <p>Established in 1877 the National Museum of South Africa stands as an international
+                                institution, focussing on natural and cultural history and art. The museum's
+                                paleantology and archaeology section has many interesting exhibits and seeks to show
+                                visitors what the world was like millions of years ago. The only complete skeleton of
+                                the Euskelosaurus, the earliest known plant-eating dinosaur, is on display at the
+                                museum.
+
+                                The Oliewenhuis Art Museum is part of the National Museum and is aimed at conserving and
+                                collecting works of art that represent the heritage of South African art. Guided tours
+                                through the museum are available, or browse the many exhibits at your leisure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+             <div id="m47" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Bagamoya Wildlife Estate
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe  frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvdYIt3rTjx4RApkz9MzineU&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                                <p>Located in Motheo in Bloemfontein, a visit to the Bagamoya Wildlife Estate is a unique
+                                experience and allows you to interact with large cats including lions, tigers and much
+                                more.
+
+                                This is a truly African experience where you can enjoy game drives, lion feeding, the
+                                Lioness restaurant, kids play area and lots of other outdoor activities.
+
+                                While visiting the estate you may come across 28 different types of buck, giraffe,
+                                hippo, lama, camels, lions, tigers, bat-eared fox and lots more.
+
+                                Open Wednesdays to Sundays.
+
+                                Entrance Fees:
+
+                                Adults R20, kids under 10 years old R25.
+
+                                Game drive fees: R200 per adult and R100 per child.
+
+                                For more info, go to www.bagamoyawildlifeestate.co.za or call +27 (0) 82 497 7550</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="m48" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Liesel Wessels Art Gallery</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                                <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=liesel%20wessels%20art%20gallery&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                                <p>Liesel Wessels is a South African fine artist located in Bloemfontein. She specialises in
+                                portraits, nudes and other types of figures. She has been creating serious art since
+                                2002 and constantly strives to break through walls of limitations to reach and create
+                                better artwork.
+
+                                The gallery contains portraits, nudes, landscapes, still life, photography, abstracts,
+                                ceramics and more.
+
+                                For more info, go to www.lieselwessels.co.za or call +27 (0) 83 400 2864</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="m49" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModalLabel">Orchid House</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJUbFZulDFjx4R_yEdf6lkUtU&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                                <p>The Orchid House is located in Hamilton Park, Bloemfontein. It is a glass domed orchid
+                                garden nursery which features an exotic collection of hundreds of these rare and
+                                beautiful flowers.
+
+                                The best time to view the modern nursery and garden is in winter as this is when orchids
+                                are in bloom.
+
+                                For more info, call +27 (0) 51 412 7017
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="m50"  class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title exampleModal">Free State National Botanical Gardens</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="map-responsive">
+                                <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ25bFocDajx4Rvm4Cr77qAnc&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                            </div>
+                                <p>Stretching over 70 hectares, the Free State NBG is located in a valley with a number of
+                                dolerite koppies marking the landscape. A meandering path takes you through the gardens
+                                past wild olive and karee trees, grassland and woodland, and a petrified tree that is
+                                thought to be over 150 million years old. The best time to enjoy the gardens is in
+                                spring when the flowers are in bloom.
+
+                                The gardens also feature two displays showing medicinal plants, and another
+                                demonstrating water-wise gardening. The Botanical Society organizes summer sunset
+                                concerts, moonlight walks, and educational talks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+</body>
+{% endblock freestate %}

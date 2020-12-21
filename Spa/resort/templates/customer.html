@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block user %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Customer: {{ customer.name }}</h5>
+            <hr>
+            <a class="btn btn-outline-info btn-sm btn-block mb-4" href="#">Update Customer</a>
+            <a class="btn btn-outline-danger btn-sm btn-block" href="">Delete Customer</a>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Contact information:</h5>
+            <hr>
+            <p>Email:  {{ customer.email }}</p>
+            <p>Phone:  {{ customer.phone }}</p>
+
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Total Bookings</h5>
+            <h3 class="card-title">{{ systems.count }}</h3>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body mt-4">
+                <div class="table-responsive">
+                <table class="table table-light table-hover">
+                    <tr>
+                        <th>Booking</th>
+                        <th>Time in</th>
+                        <th>Time Out</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+
+                    {% for systems in systems %}
+                    <tr>
+                        <td>{{ systems.booking.booking_date }}</td>
+                         <td>{{ systems.booking.time_in }}</td>
+                         <td>{{ systems.booking.time_out }}</td>
+                        <td>{{ systems.status }}</td>
+                        <td><a class="btn btn-sm btn-info" href="#">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger"  href="#">Remove</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock user %}

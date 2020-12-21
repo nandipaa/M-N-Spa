@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+
+{% block mpumalanga %}
+<body>
+
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+         <div class="container">
+
+        <div class="jumbotron-fluid">
+            {% load static %}<img src="{% static 'img/Mpumalanga.png'%}" width="100%"/>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+        <div class="container">
+
+
+
+            <!--Section: Images-->
+            <section class="text-center">
+
+
+                <div class="row">
+
+
+                    <div class="hov col-lg-4 col-md-12 mb-3"  data-toggle="modal" data-target="#m16">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.roomsforafrica.com/images/mpumalanga_dullstroom_muvungana_flyfishing2.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fly Fishing centre</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="hov col-lg-4 col-md-6 mb-3"  data-toggle="modal" data-target="#m17">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.orionhotels.co.za/wordpress18/wp-content/uploads/2018/05/shangana-cultural-village.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Shangana Cultural Village</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="hov col-lg-4 col-md-6 mb-3"  data-toggle="modal" data-target="#m18">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzL2E3ZjhmZDA3LWMwMzUtNGYxMS05ZDA3LTM3YjU5ZjVjNmNjYmQyY2U2ZDYzZjhmMDc5ZmFmZl9TdWR3YWxhX0NhdmVzXzQuanBnIl0sWyJwIiwidGh1bWIiLCJ4MzkwPiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA4MSAtYXV0by1vcmllbnQiXV0/Sudwala_Caves_4.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Sudwala Caves</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <div class="hov col-md-6 mb-3"  data-toggle="modal" data-target="#m19">
+                        <div class="view overlay z-depth-1-half">
+                           {% load static %}<img src="{% static 'img/dadad.jpg'%}" class="card-img-top" width="100%"/>
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                 <div class="card-body">
+                                    <h5 class="card-title">Blyde River Canyon</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="hov col-md-6 mb-3"  data-toggle="modal" data-target="#m20">
+                        <div class="view overlay z-depth-1-half">
+                            <img src="https://www.sa-venues.com/attractions/gallery/mpumalanga/84/6.jpg" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-light"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">God's Window</h5>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+         </div>
+       <!--Images-->
+
+
+                <div id="m16" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title exampleModalLabel">Fly Fishing</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="map-responsive">
+                                <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=fly%20fishing%20dullstrrom&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                                </div>
+                                <p>Dullstroom is considered to be the fly fishing capital of South Africa. Located in
+                                    the Mpumalanga province the area is known for its abundant dams and rivers; all of
+                                    which are well stocked with rainbow and brown trout. Most of the fly fishing done is
+                                    on a catch and release basis while some fishermen are given a quota of fish they can
+                                    take home. Many guesthouses and accommodation establishments offer fly fishing and
+                                    accommodation packages and guests can go fishing with trained guides.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="m17" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg"  role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title exampleModalLabel">Shangana Cultural Village</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="map-responsive">
+                                <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJWyvISKicwh4RpxeukfjoRuU&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                                </div>
+                                <p>Situated between southern Kruger Park and the Blyde River Canyon, the Shangana
+                                    Cultural Village invites visitors to meet the local people and experience their
+                                    unique culture. The village is owned and run by the local people who aim to retain
+                                    their rich heritage while teaching tourists about their beliefs and way of life.
+
+                                    A market is situated in the centre of the village and is where the local people make
+                                    and sell their arts and crafts. The evening festivities at the Chief’s Kraal are a
+                                    great place to interact with locals and simply relax in this hospitable culture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="m18"  class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title exampleModalLabel">Sudwala Caves</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="map-responsive">
+                                <iframe  frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJN3Y4kgNK6B4RI1Z1MXxe9jY&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                                </div>
+                                <p>The Sudwala Caves are the oldest known caves in the world. Located in Mpumalanga in
+                                    the dolomite rock of the Mankelekele Mountain range, lies a series of chambers and
+                                    tunnels. Formed over 3000 million years ago, the caves display fossils as well as
+                                    some magnificent stalagmites and stalactites.
+
+                                    Visitors to the caves can take an hour long tour through the tunnels into the main
+                                    chamber known as the PR Owen Amphitheatre which is about 70 metres in diametre and
+                                    37 metres high.
+
+                                    The cave is named after Mr Phillippus Rudolf Owen who owned the farm where the caves
+                                    were found, in 1965, and first opened them to the public. The caves are famous for
+                                    the large number of bats which permanently hang from the dark ceilings.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="m19"  class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg"  role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title exampleModalLabel">Blyde River Canon Reserve</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="map-responsive">
+                                <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=R543%2C%20Ehlanzeni&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                                </div>
+                                <p>The Blyde River Canyon area is so spectacularly magnificent that those that write
+                                    about it have run out of words to describe it. The third deepest canyon in the world
+                                    with panoramic views over cliffs rising 600 - 800m out of the river bed, a visit to
+                                    the Blyde River canyon is guaranteed to take your breath away. The reserve stretches
+                                    for 25 000 hectares and is home to an abundance of bird life including a breeding
+                                    colony of the rare Bald Ibis. The area dates back 200 million years to the time when
+                                    Gondwanaland broke apart, freeing Madagascar and Antarctica.
+
+                                    The canyon starts at Bourke's Luck Potholes and ends at the Three Rondavels with a
+                                    public road running along the western boundary to offer easy access to the sights
+                                    including The Pinnacle and God's Window. The Pinnacle is a tall quartzite column of
+                                    rock reaching up to the sky from the wooded canyon below and God's Window offers an
+                                    expansive view out across the Lowveld. Bourke's Luck Potholes are a series of
+                                    impressive rock formations found where the Blyde River and the Treur River meet and
+                                    'potholes' in the rock have been formed by the swirling water eroding the rock away.
+                                    The Three Rondavels are three huge spirals of dolomite rock rising out from the
+                                    canyon and are covered in a layer of green trees with orange lichen down their
+                                    sides.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="m20" class="modal fade exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title exampleModalLabel">God's Window</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="map-responsive">
+                                <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJz0Rmbfthwh4R5RpNEVGuqXc&key=AIzaSyBso0VlLHb_o_Fot8WfDee8tsg1koNFP_8" allowfullscreen></iframe>
+                                </div>
+                                <p>One of the most popular attractions in Mpumalanga is Gods Window which is located
+                                    along the Panorama Route. This is said to be one of the most picturesque viewpoints
+                                    in South Africa, and from here you will be able to see spectacular canyons, rock
+                                    formations and waterfalls.
+
+                                    Gods Window forms part of a 250km long stretch of breath-taking cliffs. There is a
+                                    R10.00 entrance fee to access the viewpoint and there are stalls and toilet
+                                    facilities available.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+    </main>
+    <!--Main layout-->
+
+</body>
+{% endblock mpumalanga %}

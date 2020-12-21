@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block about %}
+{% load static %}
+<body class="mt-5 pt-5">
+
+    <div class="container">
+        <section>
+            <header class="text-center">
+                <h1 class="head">About Us</h1>
+                <p class="third"> Welcome to Sally's Savings Shop</p>
+            </header>
+
+        </section>
+
+
+        <section>
+            <div class="jumbotron">
+                    <div>
+                        <img src="{% static 'img/About.png'%}" width="100%"/>
+                    </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+{% endblock about %}

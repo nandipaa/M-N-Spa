@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block verify %}
+<body>
+<div class="container mt-5">
+    <h1>thank you {{ request.user }} for booking with M & N spa, a verification code has been sent to {{ request.user.email }}</h1>
+
+
+</div>
+</body>
+{% endblock verify %}

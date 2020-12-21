@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block book %}
+<h1>Book</h1>
+<body>
+{% for reservation in reservation_list %}
+<h3>{{ reservation }}</h3>
+{% endfor %}
+</body>
+{% endblock book %}

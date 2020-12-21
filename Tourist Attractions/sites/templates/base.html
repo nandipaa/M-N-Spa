@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Tourism SA</title>
+    <link rel="shortcut icon" href="{% static 'img/logo2.png' %}">
+    <link href="//fonts.googleapis.com/css?family=Fredoka One" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Hammersmith One" rel="stylesheet" type="text/css">
+    <link href="{% static 'style/main.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top scrolling-navbar d-flex justify-content-center">
+    <a class="navbar-brand black-text" href="#">Tourism SA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/sites/">Home</a>
+            </li>
+        </ul>
+
+            <div class="dp dropdown">
+        <a class="dropdown-toggle" id="dropdownMenuButton"
+           data-toggle="dropdown" aria-haspopup="true">
+            Provinces
+        </a>
+        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/sites/gauteng">Gauteng</a>
+            <a class="dropdown-item" href="/sites/limpopo">Limpopo</a>
+            <a class="dropdown-item" href="/sites/mpumalanga">Mpumalanga</a>
+            <a class="dropdown-item" href="/sites/westerncape">Western Cape</a>
+            <a class="dropdown-item" href="/sites/easterncape">Eastern Cape</a>
+            <a class="dropdown-item" href="/sites/northerncape">Northern Cape</a>
+            <a class="dropdown-item" href="/sites/northwest">North West</a>
+            <a class="dropdown-item" href="/sites/kwazulu">Kwazulu-Natal</a>
+            <a class="dropdown-item" href="/sites/freestate">Free State</a>
+        </div>
+    </div>
+    </div>
+
+
+
+</nav>
+
+
+
+
+
+<div>
+{% block content %}
+{% endblock content %}
+
+{% block gauteng %}
+{% endblock gauteng %}
+
+{% block limpopo %}
+{% endblock limpopo %}
+
+{% block mpumalanga %}
+{% endblock mpumalanga %}
+
+{% block westerncape %}
+{% endblock westerncape %}
+
+{% block easterncape %}
+{% endblock easterncape %}
+
+{% block northerncape %}
+{% endblock northerncape %}
+
+{% block northwest %}
+{% endblock northwest %}
+
+{% block kwazulu %}
+{% endblock kwazulu %}
+
+{% block freestate %}
+{% endblock freestate %}
+</div>
+
+<div class="footer container-fluid bg-light">
+    <p class="text-center"><i class="fas fa-map-marker-alt"></i> South Africa Copyright &copy; 2020 Munashe Operations. All Rights Reserved</p>
+    <p class="text-center">
+         <i class="one fab fa-facebook-square fa-3x"></i>
+         <i class="two fab fa-youtube-square fa-3x"></i>
+         <i class="three fab fa-twitter-square fa-3x"></i>
+         <i class="four fab fa-instagram fa-3x"></i>
+     </p>
+     <p class="text-right"></p>
+ </div>
+
+    <!-- JQuery -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+         crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+         crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+         crossorigin="anonymous"></script>
+ <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+ <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+ <!-- Bootstrap tooltips -->
+ <script type="text/javascript" src="js/popper.min.js"></script>
+ <!-- Bootstrap core JavaScript -->
+ <script type="text/javascript" src="js/bootstrap.min.js"></script>
+ <!-- MDB core JavaScript -->
+ <script type="text/javascript" src="js/mdb.min.js"></script>
+ <!-- Initializations -->
+ <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+
+ </script>
+
+</body>
+</html>
