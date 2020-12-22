@@ -120,7 +120,84 @@ def email(request):
     return render(request, 'email.html')
 
 
+def createCustomer(request):
 
+    if request.method == 'POST':
+        print(request.POST)
+    custom = CustomerForm(request.POST)
+    if custom.is_valid():
+        custom.save()
+        return redirect('dashboard')
+    context = {'custom': custom}
+
+    return render(request, 'create_customer.html', context)
+
+
+def createBooking(request):
+
+    if request.method == 'POST':
+        print(request.POST)
+    create = BookingForm(request.POST)
+    if create.is_valid():
+        create.save()
+        return redirect('dashboard')
+
+    context = {'create': create}
+    return render(request, 'create_booking.html', context)
+
+
+def updateBooking(request, pk):
+
+    update = Booking.objects.get(id=pk)
+    create = BookingForm(instance=update)
+
+    if request.method == 'POST':
+     create = BookingForm(request.POST, instance=update)
+    if create.is_valid():
+        create.save()
+        return redirect('dashboard')
+
+    context = {'create': create}
+
+    return render(request, 'create_booking.html', context)
+
+
+def deleteBooking(request, pk):
+    update = Booking.objects.get(id=pk)
+
+    if request.method == "POST":
+        update.delete()
+        return redirect('index')
+
+    context = {'booking': update}
+    return render(request, 'delete.html', context)
+
+
+def updateCustomer(request, pk):
+
+    update = Customer.objects.get(id=pk)
+    custom = CustomerForm(instance=update)
+
+    if request.method == 'POST':
+     custom = CustomerForm(request.POST, instance=update)
+    if custom.is_valid():
+        custom.save()
+        return redirect('dashboard')
+
+    context = {'custom': custom}
+
+    return render(request, 'create_customer.html', context)
+
+
+def deleteCustomer(request, pk):
+    update = Customer.objects.get(id=pk)
+
+    if request.method == "POST":
+        update.delete()
+        return redirect('index')
+
+    context = {'customer': update}
+    return render(request, 'delete2.html', context)
 
 
 

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block delete %}
+<p>Are you sure you want to delete "{{booking}}"?</p>
+<form action="{% url 'delete_booking' booking.id %}" method="POST">
+    {% csrf_token %}
+
+    <a href="{% url 'index' %}">Cancel</a>
+    <input type="submit" name="confirm">
+</form>
+{% endblock delete %}

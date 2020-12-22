@@ -86,7 +86,7 @@
       <h1>Bookings</h1>
         <div class="col-md-12">
           <div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block mb-4" href="/resort/booking">Create Booking</a>
+            <a class="btn btn-primary btn-sm btn-block mb-4" href="{% url 'create_booking' %}">Create Booking</a>
             <div class="table-responsive">
           <table class="table table-light table-hover table-sm">
             <thead class="blue-grey lighten-4">
@@ -115,8 +115,8 @@
               <td>{{ bookings.people }}</td>
               <td>{{ bookings.packages }}</td>
               <td>{{ bookings.amount }}</td>
-              <td><a class="btn btn-sm btn-primary" href="#">Update</a></td>
-               <td><a class="btn btn-sm btn-danger"  href="#">Remove</a></td>
+              <td><a class="btn btn-sm btn-primary" href="{% url 'update_booking' bookings.id %}">Update</a></td>
+               <td><a class="btn btn-sm btn-danger"  href="{% url 'delete_booking' bookings.id %}">Remove</a></td>
             </tr>
             </tbody>
             {% endfor %}
@@ -132,7 +132,7 @@
 
            <div class="col-md-12">
           <div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block mb-4" href="#">Create Customer</a>
+            <a class="btn btn-primary btn-sm btn-block mb-4" href="{% url 'create_customer' %}">Create Customer</a>
             <div class="table-responsive">
           <table class="table table-light table-hover">
             <thead class="blue-grey lighten-4">
@@ -153,8 +153,8 @@
               <td>{{ customer.name }}</td>
                <td>{{ customer.surname }}</td>
                <td>{{ customer.email  }}</td>
-              <td><a class="btn btn-sm btn-primary" href="#">Update</a></td>
-               <td><a class="btn btn-sm btn-danger" href="#">Remove</a></td>
+              <td><a class="btn btn-sm btn-primary" href="{% url 'update_customer' customer.id %}">Update</a></td>
+               <td><a class="btn btn-sm btn-danger" href="{% url 'delete_customer' customer.id %}">Remove</a></td>
             </tr>
 
             {% endfor %}

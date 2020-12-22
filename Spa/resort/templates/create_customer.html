@@ -1,23 +1,16 @@
 {% extends 'base.html' %}
 
-{% block book %}
+{% block createcustomer %}
 {% load crispy_forms_tags %}
 <div id="booking">
 <div class="container mt-5">
 <form class="booking-form" action="" method="POST">
 	{% csrf_token %}
-    {{ book|crispy}}
+    {{ custom|crispy}}
 	<div>
 		<a href="{% url 'verify' %}"><input type="submit"/></a>
 	</div>
 </form>
 </div>
 </div>
-{% endblock book %}
-
-<form action="" method="POST">
-   {% csrf_token %}
-    {{ book.as_p }}
-    <input type="submit">
-
-</form>
+{% endblock createcustomer %}

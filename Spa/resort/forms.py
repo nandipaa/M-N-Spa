@@ -17,3 +17,8 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
 
+class CustomerForm(ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['name', 'surname', 'phone', 'email']
+
