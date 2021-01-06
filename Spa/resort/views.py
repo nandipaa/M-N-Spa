@@ -1,20 +1,15 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from .forms import *
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user, allowed_users
-from django.contrib.auth.models import Group
 from .models import *
-import os
 from django.core.mail import EmailMessage
-from django.conf import settings
-from django.template.loader import render_to_string
 from django.contrib.auth import settings
-from .otp import send_sms, generateOTP, send_email
+from .otp import send_sms, generateOTP
 import logging
-from django.views.generic import View
+
 
 random_otp = generateOTP()
 message = f'''
@@ -247,17 +242,7 @@ def deleteCustomer(request, pk):
     return render(request, 'delete2.html', context)
 
 
-def fullDay(request):
 
-    return render(request, 'full-day.html', )
-
-
-def halfDay(request):
-    return render(request, 'half-day.html', )
-
-
-def moonlight(request):
-    return render(request, 'moonlight.html', )
 
 
 
