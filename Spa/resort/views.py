@@ -7,7 +7,7 @@ from .decorators import unauthenticated_user, allowed_users
 from .models import *
 from django.core.mail import EmailMessage
 from django.contrib.auth import settings
-from .otp import send_sms, generateOTP
+from .msg import send_sms, generateOTP
 import logging
 
 
