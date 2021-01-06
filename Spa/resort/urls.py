@@ -18,5 +18,12 @@ urlpatterns = [
     path('deleteBooking/<str:pk>/', views.deleteBooking, name='delete_booking'),
     path('updateCustomer/<str:pk>/', views.updateCustomer, name='update_customer'),
     path('deleteCustomer/<str:pk>/', views.deleteCustomer, name='delete_customer'),
+    path('userpage', views.userPage, name='userpage'),
+    path('full-day', views.fullDay, name='full-day'),
+    path('half-day', views.halfDay, name='half-day'),
+    path('moonlight', views.moonlight, name='moonlight'),
+
+
+
 
 ]

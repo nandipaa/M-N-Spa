@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
 {% block delete2 %}
+<div class="container mt-3">
+    <div class="card" style="width: 18rem; padding:10px;">
 <p>Are you sure you want to delete "{{customer}}"?</p>
 <form action="{% url 'delete_customer' customer.id %}" method="POST">
     {% csrf_token %}
 
-    <a href="{% url 'index' %}">Cancel</a>
-    <input type="submit" name="confirm">
+    <a class="btn btn-sm btn-danger"  href="{% url 'index' %}">Cancel</a>
+    <input class="btn btn-sm btn-primary"  type="submit" name="confirm">
 </form>
+        </div>
+    </div>
 {% endblock delete2 %}

@@ -42,7 +42,6 @@ class Booking(models.Model):
                               default='ONE')
 
     booking_date = models.DateField()
-    time_in = models.TimeField()
     created = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)
 
     def __str__(self):
@@ -60,5 +59,6 @@ class System(models.Model):
     ]
     date_created = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)
     status = models.CharField(max_length=200, choices=STATUS, null=True)
+
 
 

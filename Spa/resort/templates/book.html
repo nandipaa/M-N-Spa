@@ -1,23 +1,127 @@
 {% extends 'base.html' %}
 
 {% block book %}
-{% load crispy_forms_tags %}
+
+
+<body>
+
 <div id="booking">
-<div class="container mt-5">
-<form class="booking-form" action="" method="POST">
-	{% csrf_token %}
-    {{ book|crispy}}
-	<div>
-		<a href="{% url 'verify' %}"><input type="submit"/></a>
-	</div>
-</form>
+    <div class="container">
+        <div class="booking-form">
+
+            <div class="head d-flex justify-content-center"><h2>Book Appointment</h2></div>
+            <hr>
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="input form-group">
+                            <p><label class="form-label">Name:{{ book.name }}</label></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input form-group">
+                            <p><label class="form-label">Surname:{{ book.surname}}</label></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="input form-group">
+                            <p><label class="form-label">Email Address:{{ book.email }}</label></p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input form-group">
+                            <p><label class="form-label">Confirm Email Address:{{ book.confirm_email }}</label></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="input form-group">
+                            <p><label class="form-label">Cellphone Number:{{ book.phone }}</label></p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input form-group">
+
+                            <p><label class="form-label">Booking Date:<input type="text" id="datepicker">{{ book.booking_date }}</label><i
+                                    class="fas fa-calendar-alt"></i></p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p><label class="form-label">Package: {{ book.packages }}</label></p>
+
+                            <span class="select-arrow"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p><label class="form-label">People: {{ book.people }}</label></p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                  <input type="submit"/>
+                </div>
+            </form>
+
+        </div>
+    </div>
 </div>
-</div>
+<script>
+
+		//Query All input fields
+		var book_fields = document.getElementsByTagName('input')
+		book_fields[1].placeholder='Enter name';
+		book_fields[2].placeholder='Enter surname';
+		book_fields[3].placeholder='Enter email';
+		book_fields[4].placeholder='Confirm email';
+		book_fields[5].placeholder='Enter number';
+
+
+		for (var field in book_fields){
+			book_fields[field].className += ' form-control'
+		}
+
+
+
+
+
+
+
+</script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+</body>
+
 {% endblock book %}
 
-<form action="" method="POST">
-   {% csrf_token %}
-    {{ book.as_p }}
-    <input type="submit">
-
-</form>

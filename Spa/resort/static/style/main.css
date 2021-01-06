@@ -1,14 +1,17 @@
+html, body
+{padding:0;
+ margin:0;
+  height:100%;}
+
 .navbar{
 background-color:#acd8d9;
 }
 
 .navbar-nav{
-
-text-decoration: none;
+    text-decoration: none;
     color: #000000;
     font-family: 'Archivo', sans-serif;
     text-transform: uppercase;
-
 }
 
 .navbar-brand{
@@ -17,14 +20,14 @@ text-decoration: none;
     font-size: 1.8em;
     text-transform: uppercase;
     margin-left:40px;
-
 }
-
 
 .hello-msg{
  font-size: 18px;
  color:#000;
  margin-right:5px;
+     display: inline-block;
+
 }
 
 /* index boxes */
@@ -169,11 +172,6 @@ text-decoration: none;
 }
 
 /* end index boxes */
-
-
-
-
-
 /* packages */
 
 .cd {
@@ -181,17 +179,14 @@ text-decoration: none;
     position: relative;
     display: flex;
     justify-content: center;
-
-
+    margin-bottom:80px;
 }
 
 .cd .card {
     position: relative;
     border-radius: 10px;
     background-color: #acd8d9;
-    margin-top:150px
-
-
+    margin-top:80px
 
 }
 
@@ -311,10 +306,22 @@ background-color: #4aada9;
 /* end packages */
 
 /* booking form */
+
+#booking {
+    background: url("/static/img/towels.jpg") 50% 0 no-repeat fixed;
+	background-position: center;
+	 background-size: cover;
+	 padding-top:200px;
+	 padding-bottom:200px;
+	 margin-bottom:0;
+
+}
+
 .booking-form {
+
 	background-color: #fff;
-	margin-left: 50px;
-	margin-right: 50px;
+	margin-left: 20px;
+	margin-right: 60px;
 	padding: 20px 20px;
 	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
@@ -324,8 +331,6 @@ background-color: #4aada9;
 .booking-form .form-group-text {
 	position: relative;
 	margin-bottom: 30px;
-
-
 
 }
 
@@ -351,8 +356,6 @@ background-color: #4aada9;
 	color: rgba(62, 72, 92, 0.3);
 }
 
-
-
 .booking-form select.form-control {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -371,6 +374,7 @@ background-color: #4aada9;
 	color: rgba(62, 72, 92, 0.3);
 	font-size: 14px;
 }
+
 
 .booking-form select.form-control+.select-arrow:after {
 	content: '\279C';
@@ -415,12 +419,14 @@ background-color:#acd8d9;
   width: 100%;
   color: #52565b;
 }
+
 .testimonial .section-title h2 {
   color: #fff;
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 3px;
 }
+
 #testimonial blockquote {
   border-left: none;
   padding: 20px;
@@ -432,6 +438,7 @@ background-color:#acd8d9;
   box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
   position: relative;
 }
+
 #testimonial blockquote:after {
   content: '';
   position: absolute;
@@ -444,19 +451,17 @@ background-color:#acd8d9;
   bottom: -12px;
   left: 10%;
 }
+
 #testimonial .author {
   margin-bottom: 0;
   margin-left: 10px;
   color: #fff;
 }
 
-
 .testimonial{
   padding: 7em 0;
   margin-bottom:50px;
 }
-
-
 
 .welcome{
  border-style:solid;
@@ -491,11 +496,124 @@ border-color: #acd8d9;
 }
 
 .footer{
-background:#acd8d9;
-padding:100px;
+  background:#acd8d9;
+  padding:100px;
+position: relative;
+    bottom: 50px;
 }
 
 .log{
 color:#000000;
 }
 
+
+.head{
+font-family: 'Playfair Display', serif;
+text-transform: uppercase;
+cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  background: linear-gradient(to bottom, #000, #000 60%, #acd8d9 60%, #acd8d9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+  transition: background 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.heading{
+position: relative;
+
+}
+
+.heading:before {
+content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: #000;
+  bottom: 9px;
+  transition: all 0.2s ease-out;
+}
+.head:hover{
+ background-position: 0 11px;}
+
+ .heading:hover:before{
+ transform: translateY(10px)
+ }
+
+ .intro{
+ background: #acd8d9;
+ padding:20px;
+ border-radius:5px;
+ }
+
+.deals{
+margin-bottom:90px;
+}
+
+.thing {
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+
+  border-left: 0 solid #acd8d9;
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+.thing:hover {
+  padding-left: 0.5rem;
+  border-left: 0.5rem solid #ffe4c4 ;
+}
+
+.thing > :first-child {
+  margin-top: 0;
+}
+
+.thing > :last-child {
+  margin-bottom: 0;
+}
+
+.standard{
+font-family: 'Playfair Display', serif;
+text-transform: uppercase;
+cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  background: linear-gradient(to bottom, #000, #000 60%,#ffe4c4 60%, #ffe4c4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+  transition: background 0.2s ease-out;
+  white-space: nowrap;
+}
+
+.heading{
+position: relative;
+
+}
+
+.heading:before {
+content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: #000;
+  bottom: 9px;
+  transition: all 0.2s ease-out;
+}
+.standard:hover{
+ background-position: 0 11px;}
+
+ .heading:hover:before{
+ transform: translateY(10px)
+ }

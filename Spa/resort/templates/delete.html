@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
 {% block delete %}
-<p>Are you sure you want to delete "{{booking}}"?</p>
+<div class="container mt-3">
+    <div class="card" style="width: 18rem; padding:10px;" >
+<p>Are you sure you want to delete your booking ?</p>
 <form action="{% url 'delete_booking' booking.id %}" method="POST">
     {% csrf_token %}
 
-    <a href="{% url 'index' %}">Cancel</a>
-    <input type="submit" name="confirm">
+    <a class="btn btn-sm btn-danger" href="{% url 'index' %}">Cancel</a>
+    <input class="btn btn-sm btn-primary"  type="submit" name="confirm">
 </form>
+    </div>
+</div>
 {% endblock delete %}

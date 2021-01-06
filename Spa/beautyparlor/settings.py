@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resort.apps.ResortConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'django_forms_bootstrap',
+
+
 ]
 
 MIDDLEWARE = [
@@ -129,7 +132,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'nandipa.munashe@gmail.com'
-EMAIL_HOST_PASSWORD = 'Munashe06'
+EMAIL_HOST_PASSWORD = 'Munashe1006'
+
 
 
 

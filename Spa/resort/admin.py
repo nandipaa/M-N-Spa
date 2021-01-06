@@ -7,7 +7,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'booking_date', 'time_in', 'created')
+    list_display = ('name', 'surname', 'booking_date', 'email', 'created')
     list_filter = ('created',)
 
 

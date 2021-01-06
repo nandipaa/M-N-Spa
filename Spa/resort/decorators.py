@@ -44,12 +44,5 @@ def admin_only(view_func):
         return wrapper_function
 
 
-def booked_users(view_func):
-    def wrapper_func(request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return redirect('verify')
-        else:
-            return view_func(request, *args, **kwargs)
 
-    return wrapper_func
 

@@ -3,9 +3,10 @@
 {% block verify %}
 <body>
 <div class="container mt-5">
-    <h1>thank you {{ request.user }} for booking with M & N spa, a verification code has been sent to {{ request.user.email }}</h1>
+    <div class="card" style="padding:10px;">
+    <h1>Thank you {{ request.user }} for booking with M & N spa, a verification code has been sent to your number</h1>
 
-
+</div>
 </div>
 </body>
 {% endblock verify %}

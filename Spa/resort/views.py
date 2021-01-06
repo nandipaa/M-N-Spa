@@ -1,15 +1,34 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .decorators import unauthenticated_user, allowed_users, admin_only, booked_users
+from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.models import Group
 from .models import *
+import os
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
+from django.contrib.auth import settings
+from .otp import send_sms, generateOTP, send_email
+import logging
+from django.views.generic import View
+
+random_otp = generateOTP()
+message = f'''
+
+ Hello !
+
+Your Verification Code for M & N Spa is : {random_otp}
+
+Make sure you give this code when attending booking
+
+Thank you for booking with us :)
+
+
+        '''
 
 
 def index(request):
@@ -24,9 +43,8 @@ def register(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
+
             messages.success(request, ' Account was created for ' + username)
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
 
             return redirect('login')
 
@@ -55,6 +73,11 @@ def logoutUser(request):
     return redirect('login')
 
 
+def sendSms(message, phone):
+    send_sms('AC2fd385b375b574dcdea3eed644590d0d', '386be8d16a0f60434050dcc0b34021e6', message, '+14793482952',
+             phone)
+
+
 @login_required(login_url='login')
 def booking(request):
 
@@ -64,7 +87,38 @@ def booking(request):
     if book.is_valid():
         book.save()
 
+        phone = book.cleaned_data['phone']
+
+        sendSms(message, phone)
+
+        logging.warning('Test..')
+
+        msg_body = f'''
+
+        Hello {request.POST.get('name')}!
+
+        Your Verification Code for M & N Spa is : {random_otp}
+
+        Make sure you give this code when attending booking
+
+        Thank you for booking with us :)
+
+
+        '''
+        email = EmailMessage(
+            'Booking verification code',
+            msg_body,
+            settings.EMAIL_HOST_USER,
+
+            [request.POST.get('email')]
+        )
+
+        logging.warning([request.user.email])
+        email.fail_silently = False
+        email.send()
+
     context = {'book': book}
+
     return render(request, 'book.html', context)
 
 
@@ -90,6 +144,17 @@ def dashboard(request):
     return render(request, 'dashboard.html', context)
 
 
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
+def userPage(request):
+    customer = Customer.objects.all()
+    system = request.user.customer.system_set.all()
+    total_bookings = system.count()
+
+    context = {'customer': customer, 'system': system, 'total_bookings': total_bookings,}
+    return render(request, 'userpage.html', context)
+
+
 def packages(request):
     return render(request, 'packages.html')
 
@@ -106,22 +171,7 @@ def verify(request):
     return render(request, 'verify.html')
 
 
-def email(request):
-    template = render_to_string('email.html', {'name' : request.user})
-    email = EmailMessage(
-        'You have successfully created your account! ',
-        template,
-        settings.EMAIL_HOST_USER,
-        [request.user.email],
-    )
-    email.fail_silently = False
-    email.send()
-
-    return render(request, 'email.html')
-
-
 def createCustomer(request):
-
     if request.method == 'POST':
         print(request.POST)
     custom = CustomerForm(request.POST)
@@ -134,7 +184,6 @@ def createCustomer(request):
 
 
 def createBooking(request):
-
     if request.method == 'POST':
         print(request.POST)
     create = BookingForm(request.POST)
@@ -147,12 +196,11 @@ def createBooking(request):
 
 
 def updateBooking(request, pk):
-
     update = Booking.objects.get(id=pk)
     create = BookingForm(instance=update)
 
     if request.method == 'POST':
-     create = BookingForm(request.POST, instance=update)
+        create = BookingForm(request.POST, instance=update)
     if create.is_valid():
         create.save()
         return redirect('dashboard')
@@ -174,12 +222,11 @@ def deleteBooking(request, pk):
 
 
 def updateCustomer(request, pk):
-
     update = Customer.objects.get(id=pk)
     custom = CustomerForm(instance=update)
 
     if request.method == 'POST':
-     custom = CustomerForm(request.POST, instance=update)
+        custom = CustomerForm(request.POST, instance=update)
     if custom.is_valid():
         custom.save()
         return redirect('dashboard')
@@ -198,6 +245,19 @@ def deleteCustomer(request, pk):
 
     context = {'customer': update}
     return render(request, 'delete2.html', context)
+
+
+def fullDay(request):
+
+    return render(request, 'full-day.html', )
+
+
+def halfDay(request):
+    return render(request, 'half-day.html', )
+
+
+def moonlight(request):
+    return render(request, 'moonlight.html', )
 
 
 

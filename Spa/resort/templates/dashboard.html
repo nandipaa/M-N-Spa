@@ -98,7 +98,6 @@
               <th>Created</th>
                <th>People</th>
                <th>Package</th>
-               <th>Amount</th>
               <th>Update</th>
               <th>Remove</th>
             </tr>
@@ -114,7 +113,6 @@
               <td>{{ bookings.created }}</td>
               <td>{{ bookings.people }}</td>
               <td>{{ bookings.packages }}</td>
-              <td>{{ bookings.amount }}</td>
               <td><a class="btn btn-sm btn-primary" href="{% url 'update_booking' bookings.id %}">Update</a></td>
                <td><a class="btn btn-sm btn-danger"  href="{% url 'delete_booking' bookings.id %}">Remove</a></td>
             </tr>

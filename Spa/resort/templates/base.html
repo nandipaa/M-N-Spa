@@ -14,6 +14,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,600|Playfair+Display" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
 <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
 
     <title>Spa</title>
@@ -29,10 +41,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
            {% if request.user.is_authenticated %}
-            <a href="/resort/" class="nav-item nav-link active">home</a>
+            <a href="/resort/" class="nav-item nav-link ">home</a>
             <a href="/resort/packages" class="nav-item nav-link">Packages</a>
             <a href="/resort/booking" class="nav-item nav-link">Book Now</a>
-            <a href="/resort/user_page" class="nav-item nav-link">My PAge</a>
+            <a href="/resort/userpage" class="nav-item nav-link">My PAge</a>
             {% if request.user.is_staff %}
             <a href="/resort/dashboard" class="nav-item nav-link">Dashboard</a>
             {% endif %}
@@ -55,6 +67,7 @@
 
 
 <div>
+
     {% block main %}
     {% endblock main %}
 
@@ -91,13 +104,25 @@
     {% block delete2 %}
     {% endblock delete2 %}
 
+    {% block userpage %}
+    {% endblock userpage %}
 
+    {% block fullday %}
+    {% endblock fullday %}
+
+    {% block halfday %}
+    {% endblock halfday %}
+
+    {% block moonlight %}
+    {% endblock moonlight %}
 
 </div>
-<footer class="sticky footer pt-4 my-md-5 pt-md-5 ">
+
+<footer class="footer mt-5 ">
     <div class="container row">
       <div class="col-12 col-md">
-          <p class="text-center"><i class="fas fa-map-marker-alt"></i> South Africa Copyright &copy; 2020 Munashe Operations. All Rights Reserved</p>
+          <p class="text-center"><i class="fas fa-map-marker-alt"></i>
+ South Africa Copyright &copy; 2020 Munashe Operations. All Rights Reserved</p>
       </div>
       <div class="col-6 col-md">
         <h5>Features</h5>

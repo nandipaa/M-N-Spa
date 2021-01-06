@@ -2,68 +2,77 @@
 
 {% block packages %}
 <body>
-<div class="packages d-flex justify-content-center mt-3 welcome"><h1>Standard Packages</h1></div>
-<div class="" >
-    <div class="cd container">
-      <div class="row">
-      <div class="card col-lg-4 col-md-12">
-        <div class="face face1">
-          <div class="content">
-            <div class="icon">
-            </div>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <h1 class="text-center">Full Day Spa</h1>
-            <h3>
+<div class="container mt-5">
+    <div class="packages standard mb-3 d-flex justify-content-center mt-3"><h1>Standard Packages</h1></div>
+  <hr>
+  <div class="row">
+ <div class="col-lg-4 col-md-12 mb-3">
+    <div class="deals card thing card-body wow fadeIn">
+         <h1 class="standard text-center">Full Day Spa</h1>
+            <h3 class="d-flex justify-content-center">
               R1,450.00 – R1,649.00 <small class="text-muted">/ pp</small>
             </h3>
-
-            <a href="/resort/booking" class="btn btn-md btn-outline na">Book Now</a>
-
-          </div>
+        <div class="d-flex justify-content-center">
+        {% load static %}<img src="{% static 'img/hot-stone.jpg'%}" width="50%"/>
         </div>
-      </div>
-      <div class="card col-lg-4 col-md-6">
-        <div class="face face1">
-          <div class="content">
-            <div class="icon">
+<hr>
+     <h4> Your treatment starts with the sound of conventional African singing and drumming: Welcome drinks on entry, tasty light breakfast, lunch with debauched pastries, refreshments, six lavish medications, the utilize of the mineral spa Jacuzzi/ mineral pool (subject to the scene) & unwinding time, and chocolate on flight. The six spa treatments:</h4>
+        <p>–Conventional full-body knead with hot stones and a choice of three 100% normal fragrant oils – calming, revitalizing and sustaining</p>
+        <p>– Relaxing Head, Neck & Shoulder Massage</p>
+        <p>– Special Foot Therapy with hydrating pressure point foot massage from toe to knees</p>
+        <p>– hand massage with warm rose petal water and exfoliation</p>
+        <p>– Relaxing pressure point facial</p>
+        <p>– Spa body exfoliation treatment</p>
+        <p> Time: begins at 08:30 am and closes at 17:00 pm</p>
 
-            </div>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <h1 class="text-center">Half Day Spa</h1>
-            <h3>
+        <a href="/resort/booking" class="btn btn-md btn-outline-dark ">Book Now</a>
+</div>
+ </div>
+
+ <div class="col-lg-4 col-md-12 mb-3">
+    <div class="deals card thing card-body  wow fadeIn ">
+         <h1 class="standard text-center">Half Day Spa</h1>
+            <h3 class="d-flex justify-content-center">
               R999.00 – R1,199.00 <small class="text-muted">/ pp</small>
             </h3>
-            <a href="/resort/booking" class="btn btn-md btn-outline ba">Book Now</a>
+         <div class="d-flex justify-content-center">
+        {% load static %}<img src="{% static 'img/flowers.jpg'%}" width="50%"/>
+        </div>
+<hr>
+<h4>Enjoy a restorative and energizing morning or afternoon Half Day Spa package. Your experience includes unrivaled entertainment, delicious light breakfast at the morning session or lunch with decadent desserts at the afternoon session, beverages, and chocolate to round off your experience
+        Three spa treatments:</h4>
+        <p>– Relaxing Head, Neck & Shoulder Massage</p>
+        <p>– Special Foot Therapy with hydrating pressure point foot massage from toe to knees</p>
+        <p>– hand massage with warm rose petal water and exfoliation</p>
+  <p>  Time: A morning session from 08:30 am – 12:00 pm and an afternoon session from 12:00 pm – 16:00 pm</p>
+ <a href="/resort/booking" class="btn btn-md btn-outline-dark ">Book Now</a>
 
-          </div>
-        </div>
-      </div>
-      <div class="card col-lg-4 col-md-6">
-        <div class="face face1">
-          <div class="content">
-            <div class="icon">
-            </div>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <h1 class="text-center">Moonlight Spa</h1>
-            <h3>
+</div>
+ </div>
+
+
+
+ <div class="col-lg-4 col-md-12 mb-3">
+    <div class="deals card thing card-body mr-3 wow fadeIn ">
+          <h1 class="standard text-center">Moonlight Spa</h1>
+            <h3 class="d-flex justify-content-center">
               R1,200.00 – R1,450.00 <small class="text-muted">/ pp</small>
             </h3>
-            <a href="/resort/booking" class=" la btn btn-md btn-outline ">Book Now</a>
-
-          </div>
+         <div class="d-flex justify-content-center">
+        {% load static %}<img src="{% static 'img/mask.jpg'%}" width="50%"/>
         </div>
-      </div>
-      </div>
+<hr>
+<h4>Enjoy a restorative and energizing morning or afternoon Half Day Spa package. Your experience includes unrivaled entertainment, delicious light breakfast at the morning session or lunch with decadent desserts at the afternoon session, beverages, and chocolate to round off your experience
+        Three spa treatments:</h4>
+         <p>– Relaxing Head, Neck & Shoulder Massage</p>
+        <p>– Special Foot Therapy with hydrating pressure point foot massage from toe to knees</p>
+        <p>– hand massage with warm rose petal water and exfoliation</p>
+        <p> Time: Starts at 18:00 pm and ends at 22:00 pm</p>
+
+ <a href="/resort/booking" class="btn btn-sm btn-outline-dark ">Book Now</a>
     </div>
+</div>
   </div>
+</div>
 </body>
 {% endblock packages %}
