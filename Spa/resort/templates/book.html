@@ -1,125 +1,106 @@
 {% extends 'base.html' %}
 
 {% block book %}
-
-
-<body>
+{% load static %}
 
 <div id="booking">
+
     <div class="container">
-        <div class="booking-form">
 
-            <div class="head d-flex justify-content-center"><h2>Book Appointment</h2></div>
-            <hr>
-            <form method="POST" action="">
-                {% csrf_token %}
+        <div class="booking-form ">
+            <div class="row">
+                <div class="col-sm-6 ">
 
-                <div class="row">
+                    <div class="d-flex justify-content-center"><h2>Book Appointment</h2></div>
+                        <hr>
 
-                    <div class="col-sm-6">
-                        <div class="input form-group">
-                            <p><label class="form-label">Name:{{ book.name }}</label></p>
+                    <form class="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <div class="input form-group">
+                                    <p><label class="form-label">Email Address:{{ book.email }}</label></p>
+                                </div>
+                            </div>
+
+
                         </div>
-                    </div>
 
-                    <div class="col-sm-6">
-                        <div class="input form-group">
-                            <p><label class="form-label">Surname:{{ book.surname}}</label></p>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="input form-group">
+                                    <p><label class="form-label">Cellphone Number:{{ book.phone }}</label></p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="input form-group">
+                                    <p>Booking Date: <input id="datepicker" name='booking_date' type="text"></p>
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <p><label class="form-label">Package: {{ book.packages }}</label></p>
+                                    <span class="select-arrow"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <p><label class="form-label">People: {{ book.people }}</label></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <input class="btn btn-sm" type="submit"/>
+                        </div>
+                        {% for message in messages %}
+                        <p id="messages">{{message}}</p>
+                        {% endfor %}
+
+                    </form>
 
                 </div>
 
-                <div class="row">
-
-                    <div class="col-sm-6">
-                        <div class="input form-group">
-                            <p><label class="form-label">Email Address:{{ book.email }}</label></p>
-
-                        </div>
+                <div class="col-sm-6">
+                    <div class="booking">
+                        <img class="booking" src="{% static 'img/towels.jpg' %}" width="100%"/>
                     </div>
-
-                    <div class="col-sm-6">
-                        <div class="input form-group">
-                            <p><label class="form-label">Confirm Email Address:{{ book.confirm_email }}</label></p>
-                        </div>
-                    </div>
-
                 </div>
 
-                <div class="row">
-
-                    <div class="col-sm-6">
-                        <div class="input form-group">
-                            <p><label class="form-label">Cellphone Number:{{ book.phone }}</label></p>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="input form-group">
-
-                            <p><label class="form-label">Booking Date:<input type="text" id="datepicker">{{ book.booking_date }}</label><i
-                                    class="fas fa-calendar-alt"></i></p>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <p><label class="form-label">Package: {{ book.packages }}</label></p>
-
-                            <span class="select-arrow"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <p><label class="form-label">People: {{ book.people }}</label></p>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div>
-                  <input type="submit"/>
-                </div>
-            </form>
-
+            </div>
         </div>
     </div>
 </div>
-<script>
+    <script>
 
 		//Query All input fields
 		var book_fields = document.getElementsByTagName('input')
-		book_fields[1].placeholder='Enter name';
-		book_fields[2].placeholder='Enter surname';
-		book_fields[3].placeholder='Enter email';
-		book_fields[4].placeholder='Confirm email';
-		book_fields[5].placeholder='Enter number';
+		book_fields[1].placeholder='Enter email';
+		book_fields[2].placeholder='Enter number';
+		book_fields[3].placeholder='YY/MM/DD';
 
 
 		for (var field in book_fields){
 			book_fields[field].className += ' form-control'
 		}
 
-
-
-
-
-
-
 </script>
 <script>
+
   $( function() {
     $( "#datepicker" ).datepicker();
   } );
-  </script>
+
+</script>
 
 </body>
 

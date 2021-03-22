@@ -1,16 +1,66 @@
 {% extends 'base.html' %}
 
 {% block createbooking %}
-{% load crispy_forms_tags %}
 <div id="booking">
-<div class="container mt-5">
-<form class="booking-form" action="" method="POST">
-	{% csrf_token %}
-    {{ create|crispy}}
-	<div>
-		<input type="submit"/>
+	<div class="container">
+		<div class="d-flex justify-content-center"><h2>Book Keeper</h2></div>
+		<hr>
+
+		<form action="" class="booking_form" method="POST">
+			{% csrf_token %}
+			<div class="row">
+
+				<div class="col-sm-4">
+					<div class="input form-group">
+						<p><label class="form-label">Email Address:{{ create.email }}</label></p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-6">
+					<div class="input form-group">
+						<p><label class="form-label">Cellphone Number:{{ create.phone }}</label></p>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<div class="input form-group">
+						<p>Booking Date: <input id="datepicker" name='booking_date' type="text"></p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-6">
+					<div class="form-group">
+						<p><label class="form-label">Package: {{ create.packages }}</label></p>
+						<span class="select-arrow"></span>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<div class="form-group">
+						<p><label class="form-label">People: {{ create.people }}</label></p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<input class="btn btn-outline-success btn-md" type="submit"/>
+			</div>
+			{% for message in messages %}
+			<p id="messages">{{message}}</p>
+			{% endfor %}
+
+
+		</form>
 	</div>
-</form>
+
 </div>
 </div>
 {% endblock createbooking %}

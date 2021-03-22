@@ -16,15 +16,15 @@
         <div class="card card-body">
             <h5>Contact information:</h5>
             <hr>
-            <p>Email:  {{ customer.email }}</p>
-            <p>Phone:  {{ customer.phone }}</p>
+            <p>Email:  {{ user.email }}</p>
+            <p>Phone:  {{ user.phone }}</p>
 
         </div>
     </div>
     <div class="col-md">
         <div class="card card-body">
             <h5>Total Bookings</h5>
-            <h3 class="card-title">{{ systems.count }}</h3>
+            <h3 class="card-title">{{ appointment.count }}</h3>
         </div>
     </div>
 </div>
@@ -35,19 +35,21 @@
                 <table class="table table-light table-hover">
                     <tr>
                         <th>Booking</th>
-                        <th>Time in</th>
                         <th>Status</th>
+                        <!--
                         <th>Update</th>
                         <th>Remove</th>
+                        --->
                     </tr>
 
-                    {% for systems in systems %}
+                    {% for appointment in appointment %}
                     <tr>
-                        <td>{{ systems.booking.booking_date }}</td>
-                         <td>{{ systems.booking.time_in }}</td>
-                        <td>{{ systems.status }}</td>
-                    <td>  <a class="btn btn-sm btn-info" href="{% url 'update_booking' systems.id %}">Update</a></td>
-              <td>  <a class="btn btn-sm btn-danger"  href="{% url 'delete_booking' systems.id %}">Remove</a></td>
+                        <td>{{ appointment.booking.booking_date }}</td>
+                        <td>{{ appointment.status }}</td>
+                        <!---
+                    <td>  <a class="btn btn-sm btn-info" href="{% url 'update_booking' appointment.id %}">Update</a></td>
+              <td>  <a class="btn btn-sm btn-danger"  href="{% url 'delete_booking' appointment.id %}">Remove</a></td>
+              -->
                     </tr>
                     {% endfor %}
 

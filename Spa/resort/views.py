@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from .forms import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -8,26 +8,14 @@ from .models import *
 from django.core.mail import EmailMessage
 from django.contrib.auth import settings
 from .msg import send_sms, generateOTP
-import logging
+from django.views.generic import UpdateView
 
-
-random_otp = generateOTP()
-message = f'''
-
- Hello !
-
-Your Verification Code for M & N Spa is : {random_otp}
-
-Make sure you give this code when attending booking
-
-Thank you for booking with us :)
-
-
-        '''
+from django.contrib.auth import forms as auth_forms, views as auth_views
+from django.contrib.auth import login as auth_login, authenticate as auth_authenticate
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', )
 
 
 @unauthenticated_user
@@ -69,30 +57,47 @@ def logoutUser(request):
 
 
 def sendSms(message, phone):
-    send_sms('AC2fd385b375b574dcdea3eed644590d0d', '386be8d16a0f60434050dcc0b34021e6', message, '+14793482952',
+    send_sms('ACc575a7cb0fe8bfe7d0851c90e0cd8e56', 'f83d29d512a84d2e249cc93614ae6b0b', message, '+14076033805',
              phone)
+
+
+code = generateOTP()
 
 
 @login_required(login_url='login')
 def booking(request):
-
     if request.method == 'POST':
         print(request.POST)
+
     book = BookingForm(request.POST)
     if book.is_valid():
-        book.save()
-
         phone = book.cleaned_data['phone']
+        book = book.save(commit=False)
+        book.otp_code = code
+        book.user = request.user
+        book.save()
+        messages.success(request, 'Form submission successful')
+
+        message = f'''
+
+         Hello {request.user.username}!
+
+        Your Verification Code for M & N Spa is : {code}
+
+        Make sure you give this code when attending booking
+
+        Thank you for booking with us :)
+
+
+                '''
 
         sendSms(message, phone)
 
-        logging.warning('Test..')
-
         msg_body = f'''
 
-        Hello {request.POST.get('name')}!
+        Hello {request.user.username}!
 
-        Your Verification Code for M & N Spa is : {random_otp}
+        Your Verification Code is for M & N Spa is  : {code}
 
         Make sure you give this code when attending booking
 
@@ -108,7 +113,6 @@ def booking(request):
             [request.POST.get('email')]
         )
 
-        logging.warning([request.user.email])
         email.fail_silently = False
         email.send()
 
@@ -122,31 +126,32 @@ def booking(request):
 def dashboard(request):
     bookings = Booking.objects.all()
     customer = Customer.objects.all()
-    system = System.objects.all()
+    appointment = Appointment.objects.all()
 
     total_customers = customer.count()
 
-    total_bookings = system.count()
-    attended = system.filter(status='Attended').count()
-    missed = system.filter(status='Missed').count()
-    cancelled = system.filter(status='Cancelled').count()
-    pending = system.filter(status='Pending').count()
+    total_bookings = appointment.count()
+    attended = appointment.filter(status='Attended').count()
+    missed = appointment.filter(status='Missed').count()
+    cancelled = appointment.filter(status='Cancelled').count()
+    pending = appointment.filter(status='Pending').count()
 
     context = {'bookings': bookings, 'customer': customer,
                'total_customers': total_customers, 'total_bookings': total_bookings,
                'attended': attended, 'missed': missed, 'cancelled': cancelled,
-               'pending': pending, 'system': system}
+               'pending': pending, 'appointment': appointment}
     return render(request, 'dashboard.html', context)
 
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['customer'])
+@allowed_users(allowed_roles=['customer', 'admin'])
 def userPage(request):
     customer = Customer.objects.all()
-    system = request.user.customer.system_set.all()
-    total_bookings = system.count()
+    appointment = request.user.appointment_set.all()
+    total_bookings = appointment.count()
+    booking = Booking.objects.all()
 
-    context = {'customer': customer, 'system': system, 'total_bookings': total_bookings,}
+    context = {'customer': customer, 'appointment': appointment, 'total_bookings': total_bookings, 'booking': booking}
     return render(request, 'userpage.html', context)
 
 
@@ -155,10 +160,11 @@ def packages(request):
 
 
 def customer(request, pk):
+    user = User.objects.get(id=pk)
     customer = Customer.objects.get(id=pk)
-    systems = customer.system_set.all()
-    systems_count = systems.count()
-    context = {'customer': customer, 'systems': systems, 'systems_count': systems_count}
+    appointment = user.appointment_set.all()
+    appointment_count = appointment.count()
+    context = {'customer': customer, 'appointment': appointment, 'appointment_count': appointment_count, 'user':user}
     return render(request, 'customer.html', context)
 
 
@@ -242,7 +248,34 @@ def deleteCustomer(request, pk):
     return render(request, 'delete2.html', context)
 
 
+def updateUser(request, id):
+    update = Appointment.objects.get(id=id)
+    appoint = AppointmentForm(instance=update)
+
+    if request.method == 'POST':
+        appoint = AppointmentForm(request.POST, instance=update)
+    if appoint.is_valid():
+        appoint = appoint.save(commit=False)
+        appoint.user = request.user
+        appoint.save(update_fields=['booking'])
+        messages.success(request, 'Form update was successful')
+
+        return redirect('index')
+
+    context = {'appoint': appoint}
+
+    return render(request, 'update_user.html', context)
 
 
+@allowed_users(allowed_roles=['customer'])
+def deleteUser(request, pk):
+    update = Appointment.objects.get(id=pk)
+
+    if request.method == "POST":
+        update.delete()
+        return redirect('userpage')
+
+    context = {'booking': update}
+    return render(request, 'delete_user.html', context)
 
 

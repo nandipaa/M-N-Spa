@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Customer(models.Model):
@@ -15,17 +16,15 @@ class Customer(models.Model):
 
 
 class Booking(models.Model):
-    name = models.CharField(max_length=200, null=True)
-    surname = models.CharField(max_length=200, null=True)
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     phone = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
-    confirm_email = models.CharField(max_length=200, null=True)
     PACKAGES_CHOICES = [('FULL DAY SPA', 'Full Day Spa'),
                         ('HALF DAY SPA', 'Half Day Spa'),
                         ('MOONLIGHT SPA', 'Moonlight Spa')]
     packages = models.CharField(max_length=100,
                                 choices=PACKAGES_CHOICES,
-                                default='FULL DAY SPA')
+                                default='FULL DAY SPA', null=True)
 
     PEOPLE_CHOICES = [('ONE', '1'),
                       ('TWO', '2'),
@@ -39,26 +38,31 @@ class Booking(models.Model):
                       ('TEN', '10'), ]
     people = models.CharField(max_length=100,
                               choices=PEOPLE_CHOICES,
-                              default='ONE')
+                              default='ONE', null=True)
 
-    booking_date = models.DateField()
-    created = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)
+    booking_date = models.DateField(null=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True, null=True)
+    otp_code = models.CharField(max_length=6, null=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.email}-{self.phone}-{self.people}-{self.packages}'
 
 
-class System(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
+class Appointment(models.Model):
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    booking = models.ForeignKey(Booking, null=True, on_delete=models.CASCADE, related_name='bookings')
+
     STATUS = [
-        ('Pending', 'Pending'),
-        ('Attended', 'Attended'),
-        ('Missed', 'Missed'),
-        ('Cancelled', 'Cancelled'),
-    ]
-    date_created = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)
-    status = models.CharField(max_length=200, choices=STATUS, null=True)
+               ('Pending', 'Pending'),
+               ('Attended', 'Attended'),
+               ('Missed', 'Missed'),
+               ('Cancelled', 'Cancelled'), ]
+
+    date_created = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True, null=True)
+    status = models.CharField(max_length=200, choices=STATUS, null=True,  default='Pending')
+
+
+
 
 
 

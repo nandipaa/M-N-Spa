@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 <div id="booking">
 <div class="container mt-5">
-<form class="booking-form" action="" method="POST">
+<form class="booking_form" action="" method="POST">
 	{% csrf_token %}
     {{ custom|crispy}}
 	<div>

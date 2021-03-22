@@ -92,12 +92,12 @@
             <thead class="blue-grey lighten-4">
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Surname</th>
+              <th>User</th>
               <th>Booking Date</th>
               <th>Created</th>
                <th>People</th>
                <th>Package</th>
+              <th>Code</th>
               <th>Update</th>
               <th>Remove</th>
             </tr>
@@ -107,12 +107,12 @@
             <tbody>
             <tr>
               <th scope="row"></th>
-              <td>{{ bookings.name }}</td>
-              <td>{{ bookings.surname }}</td>
+              <td>{{ bookings.user }}</td>
               <td>{{ bookings.booking_date }}</td>
               <td>{{ bookings.created }}</td>
               <td>{{ bookings.people }}</td>
               <td>{{ bookings.packages }}</td>
+              <td>{{ bookings.otp_code }}</td>
               <td><a class="btn btn-sm btn-primary" href="{% url 'update_booking' bookings.id %}">Update</a></td>
                <td><a class="btn btn-sm btn-danger"  href="{% url 'delete_booking' bookings.id %}">Remove</a></td>
             </tr>
@@ -136,8 +136,7 @@
             <thead class="blue-grey lighten-4">
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Surname</th>
+              <th>User</th>
               <th>Email Address</th>
               <th>Update</th>
               <th>Remove</th>
@@ -148,8 +147,7 @@
 
             <tr>
               <td><a class="btn btn-sm btn-primary" href="{% url 'customer' customer.id %}">View</a></td>
-              <td>{{ customer.name }}</td>
-               <td>{{ customer.surname }}</td>
+              <td>{{ customer.user }}</td>
                <td>{{ customer.email  }}</td>
               <td><a class="btn btn-sm btn-primary" href="{% url 'update_customer' customer.id %}">Update</a></td>
                <td><a class="btn btn-sm btn-danger" href="{% url 'delete_customer' customer.id %}">Remove</a></td>

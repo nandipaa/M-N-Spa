@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-
-{% block delete %}
+{% block delete_user %}
 <head>
  <style>
-       .card-delete {
+    .card-delete {
   background-color: #fff;
   display: block;
   width: 300px;
@@ -71,6 +70,7 @@
 }
 
 
+
     .fa-trash-alt{
 
     margin-top:60px;
@@ -81,9 +81,11 @@
 
     .btn-danger{
     width:40%;
+
+
     }
 
-    .btn-outline-primary{
+    .btn-outline{
     width:50%
     }
 
@@ -94,16 +96,23 @@
 
   </style>
   </head>
-<div class="container d-flex justify-content-center">
+<div class="container  d-flex justify-content-center ">
+
     <div class="card-delete">
         <i class="fas fa-trash-alt d-flex justify-content-center"></i>
-<p class="cancel d-flex justify-content-center">Are you sure you want to delete your booking ?</p>
-<form action="{% url 'delete_booking' booking.id %}" method="POST">
-    {% csrf_token %}
-     <div class="d-flex justify-content-between">
-    <a class="btn btn-sm btn-danger" href="{% url 'index' %}">Cancel</a>
- <input  class="btn btn-sm btn btn-sm btn-outline na" type="submit" value="Yes, I'm Sure">     </div>
-</form>
+
+        <p class="cancel d-flex justify-content-center">Are you sure you want to cancel your booking?</p>
+        <form action="{% url 'delete_user' booking.id %}" method="POST">
+            {% csrf_token %}
+            <div class="d-flex justify-content-between">
+                <a class="btn btn-sm btn-danger" href="{% url 'index' %}">Cancel</a>
+                <input  class="btn btn-sm btn-outline na" type="submit" value="Yes, I'm Sure">
+            </div>
+        </form>
     </div>
 </div>
-{% endblock delete %}
+
+
+
+
+{% endblock delete_user %}

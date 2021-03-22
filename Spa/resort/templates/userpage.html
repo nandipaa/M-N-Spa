@@ -1,29 +1,29 @@
 {% extends 'base.html' %}
 
 {% block userpage %}
+<head>
+    <style>
+
+        .container{
+        margin-bottom:350px;
+        }
+    </style>
+</head>
 <div>
 
 <div class="container mt-5">
 <div class="row">
     <div class="col-md">
          <h2 class="head">User Profile:</h2>
-        <div class="card card-body">
-            <h5>{{ request.user }}</h5>
+        <div class=" userpage card card-body">
+            <h5 class="user-name">Welcome {{ request.user }}!</h5>
         </div>
     </div>
 
     <div class="col-md">
-        <div class="card card-body">
-            <h5>Contact information:</h5>
-            <hr>
-            <p> </p>
-            <p> </p>
-
-        </div>
-    </div>
-    <div class="col-md">
-        <div class="card card-body">
+        <div class=" userpage card card-body">
             <h5>Total Bookings</h5>
+            <hr>
             <h3 class="card-title"></h3>
             {{ total_bookings }}
         </div>
@@ -38,16 +38,23 @@
                         <th>Booking</th>
                         <th>Package</th>
                         <th>Status</th>
+                         <th>Update</th>
+                        <th>Remove</th>
 
 
                     </tr>
 
-                    {% for system in system %}
+                    {% for appointment in appointment %}
                     <tr>
-                        <td>{{ system.booking.booking_date }}</td>
-                         <td>{{ system.booking.packages }}</td>
-                        <td>{{ system.status }}</td>
 
+                        <td>{{ appointment.booking.booking_date }}</td>
+                         <td>{{ appointment.booking.packages }}</td>
+                        <td>{{ appointment.status }}</td>
+                        <td><a class="btn btn-sm btn-outline-success" href="{% url 'update_user' appointment.id  %}">Update</a>
+                        </td>
+
+                        <td><a type="button"  class="btn btn-sm btn-danger li-modal" href="{% url 'delete_user' appointment.id  %}">Remove</a>
+                        </td>
 
                     </tr>
                     {% endfor %}
@@ -57,8 +64,27 @@
             </div>
         </div>
     </div>
+
+
+
 </div>
-</div>
+
+
+
+<script>
+
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+</script>
+
+
+
+
 
 
 {% endblock userpage %}
+

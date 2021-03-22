@@ -1,14 +1,45 @@
 {% extends 'base.html' %}
 
 {% block main %}
+{% load static %}
 <div>
-{% load static %}<img src="{% static 'img/spa-main.png'%}" width="100%"/>
+<section>
+<div class="cover-main">
+    <div>
 
+    </div>
+   <div class="main-wrapper d-flex justify-content-center">
+        <ul id="scene"
+             data-invert-x="false"
+             data-invert-y="false"
+             data-scalar-x="7"
+             data-scalar-y="7"
+             data-friction-x="0.1"
+             data-friction-y="0.1"
+             data-origin-x="0.5"
+             data-origin-y="0.5">
 
+            <li class="layer name" data-depth="0.90">Welcome to M & n Spa</li>
 
-<div class="head d-flex justify-content-center mt-3">
-    <h1>Welcome to M & N Spa</h1>
+             <li class="layer title" data-depth="0.50">Pampering Makes People Happy</li>
+
+             <li class="layer btn btn-view" data-depth="0.30">
+                 <a href="/resort/booking" class="portfolio-btn">Book Now</a>
+             </li>
+
+        </ul>
+    </div>
 </div>
+
+</section>
+
+
+
+<div  class="head d-flex justify-content-center mt-5">
+    <h1 class="first">Welcome to M & N Spa</h1>
+</div>
+
+
 
 <div class="container intro mb-3">
     <p >M & N Spa, located at various locations is a brand-new, upscale day spa focusing on providing high-quality,
@@ -19,11 +50,15 @@
         Customers will find products at M & N that they won’t find in grocery stores.
     </p>
 </div>
-    <div class="packages head d-flex justify-content-center mt-3"><h1>Standard Packages</h1></div>
-<div class=" ">
-  <div class="cd container-fluid ">
+
+
+    <div class="packages d-flex justify-content-center mt-5"><h1 class="second">Standard Packages</h1></div>
+<div class="">
+  <div class="cd container">
     <div class="row">
-      <div class="card col-lg-4 col-md-12">
+
+        <div class="col-lg-4 col-md-12">
+      <div class="card10 card">
         <div class="face face1">
           <div class="content">
             <div class="icon">
@@ -43,85 +78,85 @@
           </div>
         </div>
       </div>
+        </div>
 
-      <div class="card col-lg-4 col-md-6">
-        <div class="face face1">
-          <div class="content">
-            <div class="icon">
+        <div class="card10 card col-lg-4 col-md-12">
+                <div class="face face1">
+                    <div class="content">
+                        <div class="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <h1 class="text-center">Half Day Spa</h1>
+                        <h3>
+                            R999.00 – R1,199.00 <small class="text-muted">/ pp</small>
+                        </h3>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-md btn-outline ba" href="/resort/booking">Book Now</a>
+                            <a class="btn btn-md btn-outline btn-light" href="/resort/packages">View Details</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
 
-            </div>
-          </div>
+        <div class="card10 card col-lg-4 col-md-6">
+                <div class="face face1">
+                    <div class="content">
+                        <div class="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <h1 class="text-center">Moonlight Spa</h1>
+                        <h3>
+                            R1,200.00 – R1,450.00 <small class="text-muted">/ pp</small>
+                        </h3>
+                        <div class="d-flex justify-content-between">
+                            <a class=" la btn btn-md btn-outline " href="/resort/booking">Book Now</a>
+                            <a class="btn btn-md btn-outline btn-light" href="/resort/packages">View Details</a>
+                        </div>
+                    </div>
+                </div>
         </div>
-        <div class="face face2">
-          <div class="content">
-            <h1 class="text-center">Half Day Spa</h1>
-            <h3>
-              R999.00 – R1,199.00 <small class="text-muted">/ pp</small>
-            </h3>
-            <div class="d-flex justify-content-between">
-              <a href="/resort/booking" class="btn btn-md btn-outline ba">Book Now</a>
-              <a href="/resort/packages" class="btn btn-md btn-outline btn-light">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card col-lg-4 col-md-6">
-        <div class="face face1">
-          <div class="content">
-            <div class="icon">
-            </div>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <h1 class="text-center">Moonlight Spa</h1>
-            <h3>
-              R1,200.00 – R1,450.00 <small class="text-muted">/ pp</small>
-            </h3>
-            <div class="d-flex justify-content-between">
-              <a href="/resort/booking" class=" la btn btn-md btn-outline ">Book Now</a>
-              <a href="/resort/packages" class="btn btn-md btn-outline btn-light">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
 
-
-
     <div class="testimonial">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title text-center">
-						<h2>WE PERSONALIZE TREATMENTS</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center">
+                        <h2>WE PERSONALIZE TREATMENTS</h2>
                         <p>to make a positive impact in your life.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="testimony">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimony">
                         <div class="card card-body">
-                        <h3>Personalized Facials</h3>
-						<p>
-							No two faces are alike. We get to know you and your skin to tailor the right treatment to help you reach your skincare goals.
-						</p>
-                            </div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="testimony">
+                            <h3>Personalized Facials</h3>
+                            <p>
+                                No two faces are alike. We get to know you and your skin to tailor the right treatment
+                                to help you reach your skincare goals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimony">
                         <div class="card card-body">
-                        <h3>Curated Products</h3>
-						<p>
-							What you use matters. Ingredients are at the core of skincare, so we educate you and recommend you the best products.
-						</p>
-						</div>
+                            <h3>Curated Products</h3>
+                            <p>
+                                What you use matters. Ingredients are at the core of skincare, so we educate you and
+                                recommend you the best products.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -140,30 +175,56 @@
         </div>
     </div>
 
-<div class="container mt-4">
-    <div class="row">
+    <div class="container mt-4">
+        <div class="row">
 
-        <div class="col-lg-4 col-md-12 mb-3">
-            <div class="card">
-                <img class="card-img-top" src="{% static 'img/pix3.jpg' %}"/>
+            <div class="col-lg-4 col-md-12 mb-3">
+
+            </div>
+
+            <div class="col-lg-4 col-md-12 mb-3">
+
+            </div>
+
+            <div class="col-lg-4 col-md-12 mb-3">
+
             </div>
         </div>
-
-        <div class="col-lg-4 col-md-12 mb-3">
-            <div class="mix card card-body">
-                <h1>We specialize in</h1>
-                <p>Body treatments care for the skin of the whole body! Whether you're looking to slough your skin to perfection, or tone & detoxify your whole body, we've got a treatment for you.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus nibh eget justo dictum pharetra. Sed nunc metus, auctor a commodo non, feugiat in nibh. </p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-12 mb-3">
-            <div class="card ">
-               <img class="card-img-top" src="{% static 'img/pix4.jpg' %}"/>
-            </div>
-        </div>
-    </div>
     </div>
 </div>
+</div>
+<div class="container">
+ <div class="grids">
+      <div class="card-three">
+        <div class="cardio">
+          <div class="card__side card__side--front" id="front-3">
+            <div class="">
+                <img class="card-img-top" src="{% static 'img/face.jpg' %}"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-four">
+        <div class="cardio">
+          <div class="card__side card__side--front" id="front-4">
+            <div class="mix card-body ">
+                <h1 class="text-box-top">We specialize in</h1>
+                <p class="text-box-middle">Body treatments care for the skin of the particularly whole body in a big way. Whether you''re looking to slough definitely your skin to perfection, or tone & detoxify particularly your definitely whole body, we\'ve for all intents and purposes got a treatment for you in a major way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-five">
+        <div class="cardio">
+          <div class="card__side card__side--front" id="front-5">
+            <div class=" ">
+               <img class="card-img-top" src="{% static 'img/pix4.jpg' %}"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+ </div>
 </div>
 
 

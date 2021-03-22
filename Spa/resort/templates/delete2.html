@@ -1,14 +1,114 @@
 {% extends 'base.html' %}
 
 {% block delete2 %}
-<div class="container mt-3">
-    <div class="card" style="width: 18rem; padding:10px;">
-<p>Are you sure you want to delete "{{customer}}"?</p>
+<head>
+ <style>
+     .card-delete {
+  background-color: #fff;
+  display: block;
+  width: 300px;
+ margin-bottom:300px;
+  margin-top:200px;
+  margin-left:20px;
+   min-height: 90px;
+  cursor: pointer;
+  padding: 15px;
+  border: 3px solid  #A47551;
+  box-shadow: 10px -10px 0 -3px #fff, 10px -10px #523A28,
+        20px -20px 0 -3px #fff, 20px -20px #A47551,
+        30px -30px 0 -3px #fff, 30px -30px #D0B49F,
+        40px -40px 0 -3px #fff, 40px -40px #E4D4C8;
+}
+
+.card-delete:hover {
+  animation: shadow-wave 1s ease infinite;
+}
+
+
+@keyframes shadow-wave {
+  0% {
+    border: 3px solid   #A47551;
+    box-shadow: 10px -10px 0 -3px #fff, 10px -10px #523A28,
+      20px -20px 0 -3px #fff, 20px -20px  #A47551,
+      30px -30px 0 -3px #fff, 30px -30px  #D0B49F,
+      40px -40px 0 -3px #fff, 40px -40px #E4D4C8;
+  }
+  20% {
+   border: 3px solid  #523A28;
+    box-shadow: 10px -10px 0 -3px #fff, 10px -10px #523A28,
+      20px -20px 0 -3px #fff, 20px -20px  #A47551,
+      30px -30px 0 -3px #fff, 30px -30px  #D0B49F,
+      40px -40px 0 -3px #fff, 40px -40px #E4D4C8;
+  }
+  40% {
+   border: 3px solid   #D0B49F;
+    box-shadow: 10px -10px 0 -3px #fff, 10px -10px #D0B49F,
+      20px -20px 0 -3px #fff, 20px -20px  #A47551,
+      30px -30px 0 -3px #fff, 30px -30px  #523A28,
+      40px -40px 0 -3px #fff, 40px -40px #E4D4C8;
+  }
+  60% {
+   border: 3px solid  #E4D4C8;
+    box-shadow: 10px -10px 0 -3px #fff, 10px -10px #E4D4C8,
+      20px -20px 0 -3px #fff, 20px -20px  #A47551,
+      30px -30px 0 -3px #fff, 30px -30px  #D0B49F,
+      40px -40px 0 -3px #fff, 40px -40px #523A28;
+  }
+  80% {
+   border: 3px solid   #A47551;
+    box-shadow: 10px -10px 0 -3px #fff, 10px -10px  #A47551,
+      20px -20px 0 -3px #fff, 20px -20px  #523A28,
+      30px -30px 0 -3px #fff, 30px -30px  #D0B49F,
+      40px -40px 0 -3px #fff, 40px -40px #E4D4C8;
+  }
+  100% {
+   border: 3px solid   #A47551;
+    box-shadow: 10px -10px 0 -3px #fff, 10px -10px #523A28,
+      20px -20px 0 -3px #fff, 20px -20px  #A47551,
+      30px -30px 0 -3px #fff, 30px -30px  #D0B49F,
+      40px -40px 0 -3px #fff, 40px -40px #E4D4C8;
+  }
+
+}
+
+
+
+    .fa-trash-alt{
+
+    margin-top:60px;
+    margin-bottom:40px;
+    width:100%;
+    font-size:80px;
+    }
+
+    .btn-danger{
+    width:40%;
+    }
+
+    .btn-outline-primary{
+    width:50%
+    }
+
+    .cancel{
+    margin-top:10px;
+    margin-bottom:40px;
+    }
+
+
+
+  </style>
+  </head>
+<div class="container d-flex justify-content-center">
+    <div class="card-delete">
+        <i class="fas fa-trash-alt d-flex justify-content-center"></i>
+
+<p  class="cancel d-flex justify-content-center">Are you sure you want to delete "{{customer}}"?</p>
 <form action="{% url 'delete_customer' customer.id %}" method="POST">
     {% csrf_token %}
-
+ <div class="d-flex justify-content-between">
     <a class="btn btn-sm btn-danger"  href="{% url 'index' %}">Cancel</a>
-    <input class="btn btn-sm btn-primary"  type="submit" name="confirm">
+     <input  class="btn btn btn-sm btn-outline na" type="submit" value="Yes, I'm Sure">
+ </div>
 </form>
         </div>
     </div>
