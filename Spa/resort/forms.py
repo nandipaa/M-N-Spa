@@ -8,7 +8,8 @@ from django.contrib.auth.models import User
 class BookingForm(ModelForm):
     class Meta:
         model = Booking
-        fields = '__all__'
+        fields = ['phone', 'email', 'packages', 'people', 'booking_date']
+        widgets = {'booking_date': forms.DateInput(attrs={'ID': 'datepicker'})}
 
 
 class CreateUserForm(UserCreationForm):
@@ -21,4 +22,12 @@ class CustomerForm(ModelForm):
     class Meta:
         model = Customer
         fields = ['name', 'surname', 'phone', 'email']
+
+
+class AppointmentForm(ModelForm):
+    class Meta:
+        model = Appointment
+        fields = ['booking']
+
+
 
